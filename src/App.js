@@ -9,7 +9,21 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
-   
+    <BrowserRouter>
+      <div className="App">
+        <NavBar />
+        <div id="page-body">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/articles" element={<ArticleListPage />} />
+            <Route path="/articles/:articleId" element={<ArticlePage />} />
+            {/* FOR ANY OTHER ROUTES THEN THE ONES WE HAVE DEFINED */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
