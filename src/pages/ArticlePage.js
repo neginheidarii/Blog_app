@@ -8,10 +8,12 @@ const ArticlePage = () => {
   //   console.log(art)
   const article = articles.find((article) => article.name === articleId);
 
-  if (!article) {
-    return <NotFoundPage />;
-  }
+// if we didnt find article
+    if (!article) {
+      return <NotFoundPage />;
+    }
   
+
   return (
     <>
       <h1>{article.title}</h1>
